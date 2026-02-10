@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Draft Results (Publish Control)</h3>
+  <p class="muted">Teachers save marks as Draft. Admin publishes to make it visible to students.</p>
+  <div id="draftTable"></div>
+  <p id="status" class="muted" style="margin-top:10px;"></p>
+</div>
+
+<script src="/static/js/admin_publish.js"></script>
+
+{% endblock %}

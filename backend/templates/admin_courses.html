@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Manage Courses</h3>
+
+  <input id="q" placeholder="Search by code/title (e.g., CSE-101)" />
+  <button class="btn" id="searchBtn">Search</button>
+
+  <div class="grid" style="grid-template-columns:1fr 1fr; margin-top:14px;">
+    <div class="card">
+      <h4>Add / Edit Course</h4>
+      <input id="course_id" type="hidden" />
+      <input id="code" placeholder="Course Code (e.g., CSE-101)" />
+      <input id="title" placeholder="Course Title" />
+      <input id="credit" type="number" step="0.5" min="0.5" value="3.0" />
+      <button class="btn" id="saveBtn">Save</button>
+      <button class="btn" id="resetBtn" style="background:#64748b;margin-top:8px;">Reset</button>
+      <p id="status" class="muted" style="margin-top:10px;"></p>
+    </div>
+
+    <div class="card">
+      <h4>Course List</h4>
+      <div id="list"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/admin_courses.js"></script>
+
+{% endblock %}

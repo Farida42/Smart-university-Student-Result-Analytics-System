@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Enroll Student to Course</h3>
+
+  <label>Student</label>
+  <select id="student"></select>
+
+  <label>Course</label>
+  <select id="course"></select>
+
+  <label>Semester</label>
+  <select id="semester"></select>
+
+  <button class="btn" id="enrollBtn">Enroll</button>
+  <p id="status" class="muted" style="margin-top:10px;"></p>
+</div>
+
+<div class="card" style="margin-top:15px;">
+  <h3>Enrollment List</h3>
+  <div id="list"></div>
+</div>
+
+<script src="/static/js/admin_enrollments.js"></script>
+
+{% endblock %}

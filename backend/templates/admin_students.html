@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Manage Students</h3>
+
+  <input id="q" placeholder="Search: name/email/dept/batch" />
+  <button class="btn" id="searchBtn">Search</button>
+
+  <div class="grid" style="grid-template-columns:1fr 1fr; margin-top:14px;">
+    <div class="card">
+      <h4>Add / Edit Student</h4>
+
+      <input id="student_id" type="hidden" />
+      <input id="name" placeholder="Full Name" />
+      <input id="email" placeholder="Email (unique)" />
+      <input id="dept" placeholder="Dept (e.g., CSE)" />
+      <input id="batch" placeholder="Batch (e.g., 2021)" />
+      <input id="section" placeholder="Section (e.g., A)" />
+
+      <small class="muted">New student default password: <b>student123</b></small>
+
+      <button class="btn" id="saveBtn" style="margin-top:10px;">Save</button>
+      <button class="btn" id="resetBtn" style="background:#64748b;margin-top:8px;">Reset</button>
+
+      <p id="status" class="muted" style="margin-top:10px;"></p>
+    </div>
+
+    <div class="card">
+      <h4>Student List</h4>
+      <div id="list"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/js/admin_students.js"></script>
+
+{% endblock %}

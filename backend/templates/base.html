@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title or "Smart Result System" }}</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">SR</div>
+      <div>
+        <div class="brand-title">Smart Result</div>
+        <div class="brand-sub">{{ session.get("role","guest")|upper }}</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      {% if session.get("role") == "admin" %}
+        <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+        <a class="nav-link" href="/admin/assign-course">Assign Course</a>
+        <a class="nav-link" href="/admin/publish">Publish Results</a>
+        <a class="nav-link" href="/admin/students">Manage Students</a>
+        <a class="nav-link" href="/admin/courses">Manage Courses</a>
+        <a class="nav-link" href="/admin/enrollments">Enrollments</a>
+        <a class="nav-link" href="/admin/export">Export CSV</a>
+        <a class="nav-link" href="/admin/reset-password">Reset Password</a>
+
+      {% elif session.get("role") == "teacher" %}
+        <a class="nav-link" href="/teacher/marks">Marks Entry</a>
+        <a class="nav-link" href="/teacher/attendance">Attendance</a>
+
+      {% elif session.get("role") == "student" %}
+        <a class="nav-link" href="/student/dashboard">Dashboard</a>
+        <a class="nav-link" href="/student/marksheet.pdf">Download Marksheet</a>
+      {% else %}
+        <a class="nav-link" href="/login">Login</a>
+      {% endif %}
+
+      <div class="nav-sep"></div>
+      {% if session.get("role") %}
+        <a class="nav-link danger" href="/logout">Logout</a>
+      {% endif %}
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="page-title">{{ title or "Dashboard" }}</div>
+      <div class="top-actions">
+        {% if session.get("role") %}
+          <span class="pill">Logged in as: {{ session.get("role") }}</span>
+        {% endif %}
+      </div>
+    </header>
+
+    <section class="content">
+      {% block content %}{% endblock %}
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

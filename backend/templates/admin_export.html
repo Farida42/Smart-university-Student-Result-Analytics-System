@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Export Published Results (CSV)</h3>
+
+  <label>Semester (optional)</label>
+  <select id="semester">
+    <option value="">All</option>
+  </select>
+
+  <label>Course (optional)</label>
+  <select id="course">
+    <option value="">All</option>
+  </select>
+
+  <label>Search Student (optional)</label>
+  <input id="q" placeholder="name or email" />
+
+  <button class="btn" id="downloadBtn">Download CSV</button>
+  <p class="muted" style="margin-top:10px;">Only <b>published</b> results are exported.</p>
+</div>
+
+<script src="/static/js/admin_export.js"></script>
+
+{% endblock %}

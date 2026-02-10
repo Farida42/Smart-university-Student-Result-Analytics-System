@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Assign Course to Teacher</h3>
+
+  <label>Teacher</label>
+  <select id="teacher"></select>
+
+  <label>Course</label>
+  <select id="course"></select>
+
+  <label>Semester</label>
+  <select id="semester"></select>
+
+  <label>Section (optional)</label>
+  <input id="section" placeholder="e.g., A" />
+
+  <button class="btn" id="assignBtn">Assign</button>
+  <p id="status" class="muted" style="margin-top:10px;"></p>
+</div>
+
+<script src="/static/js/admin_assign_course.js"></script>
+
+{% endblock %}

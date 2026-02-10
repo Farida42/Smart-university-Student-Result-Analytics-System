@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="grid">
+  <div class="card">
+    <h3>GPA Trend</h3>
+    <canvas id="gpaChart"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>CGPA Summary</h3>
+    <div id="cgpaBox" class="big-number">Loading...</div>
+    <div id="riskBox" class="muted" style="margin-top:10px;"></div>
+
+    <a class="btn" href="/student/marksheet.pdf" style="display:block;text-align:center;margin-top:14px;">
+      Download Marksheet PDF
+    </a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/student_dashboard.js"></script>
+<script src="/static/js/student_extra.js"></script>
+
+{% endblock %}

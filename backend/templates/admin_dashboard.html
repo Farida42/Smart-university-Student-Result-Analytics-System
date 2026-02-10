@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <h3>Grade Distribution (Published Results)</h3>
+  <canvas id="gradeChart"></canvas>
+</div>
+
+<div class="card" style="margin-top:15px;">
+  <h3>Top 10 Difficult Courses (Fail Rate + Avg)</h3>
+  <div id="courseTable"></div>
+</div>
+
+<div class="card" style="margin-top:15px;">
+  <h3>Top 10 Students</h3>
+  <div id="topTable"></div>
+</div>
+
+<div class="card" style="margin-top:15px;">
+  <h3>At-Risk Students</h3>
+  <div id="riskTable"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/admin_dashboard.js"></script>
+
+{% endblock %}
